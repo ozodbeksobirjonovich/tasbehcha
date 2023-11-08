@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-transform: uppercase;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-image: url(https://i.pinimg.com/736x/c4/a7/a8/c4a7a8e61deaacefdf39f732bf8c7c78.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(3px);
+        }
+        h1 {
+            font-size: 150px;
+        }
+        button {
+            margin-top: 15px;
+            width: 100px;
+            padding: 8px 0;
+            font-size: 15px;
+            border-radius: 25px;
+            border: none;
+            border: 1px solid transparent;
+            outline: none;
+            transition: 0.1s all;
+        }
+        button:hover {
+            border: 1px solid black;
+            color: white;
+            background-color: black;
+            cursor: pointer;
+        }
+        button:active {
+            transform: scale(0.9);
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+        <h1>0</h1>
+        <h2 class="kalima">Subhanalloh</h2>
+        <div class="buttons">
+            <button class="plus">+</button>
+            <button class="restart">restart</button>
+        </div>
+    </div>
+
+
+    <script>
+        let counter = 0;
+        let h1 = document.querySelector("h1");
+        let plusbtn = document.querySelector(".plus");
+        let restart = document.querySelector(".restart");
+        let kalima = document.querySelector(".kalima");
+
+        plusbtn.addEventListener("click", () => {
+            counter += 1;
+            h1.innerHTML = String(counter);
+            
+            if (counter >= 1 && counter <= 33) {
+                kalima.innerHTML = "Subhanalloh";
+            } else if (counter >= 34 && counter <= 66) {
+                kalima.innerHTML = "Alhamdulillah";
+            } else if (counter >= 67 && counter <= 99) {
+                kalima.innerHTML = "Allohu akbar";
+            } else if (counter == 100) {
+                counter = 0;
+                kalima.innerHTML = "Subhanalloh";
+            }
+        })
+
+        restart.addEventListener("click", () => {
+            counter = 0;
+            h1.innerHTML = String(counter);
+            kalima.innerHTML = "Subhanalloh";
+        })
+
+    </script>
+</body>
+</html>
